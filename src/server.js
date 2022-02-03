@@ -1,6 +1,7 @@
 import http from "http";
 import WebSocket from "ws";
 import express from "express";
+import { Socket } from "dgram";
 
 const app = express();
 
@@ -13,5 +14,11 @@ const handleListen = () => console.log(`Listening on http://localhost:3000`);
 
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
+
+function handleConnection(event) {
+  console.log(event);
+}
+
+wss.on("connection", handleConnection);
 
 server.listen(3000, handleListen);
