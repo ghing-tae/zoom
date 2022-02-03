@@ -4,4 +4,5 @@
 
 - [x] WebSockets in NodeJS
 - [x] WebSocket Events
-- [ ] WebSocket Messages
+- [x] WebSocket Messages
+- [ ] Chat Completed
