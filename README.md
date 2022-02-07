@@ -6,4 +6,5 @@
 - [x] WebSocket Events
 - [x] WebSocket Messages
 - [x] Chat Completed
-- [ ] Nicknames part one
+- [x] Nicknames part one: string > object & object > string
+- [ ] Nicknames part two
