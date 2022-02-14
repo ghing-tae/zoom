@@ -10,21 +10,22 @@ connectSocketServer.addEventListener("close", () => {
   console.log("Disconnected from the Server 𐄂");
 });
 
-function makeMessage(type, payload) {
-  const msg = { type, payload };
-  return JSON.stringify(msg);
-}
-
 connectSocketServer.addEventListener("message", (message) => {
   const li = document.createElement("li");
   li.innerText = message.data;
   messageList.append(li);
 });
 
+function makeMessage(type, payload) {
+  const msg = { type, payload };
+  return JSON.stringify(msg);
+}
+
 function handleNickname(event) {
   event.preventDefault();
   const input = nicknameForm.querySelector("input");
   connectSocketServer.send(makeMessage("nickname", input.value));
+  input.value = "";
 }
 
 function handleMessage(event) {

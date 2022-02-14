@@ -20,15 +20,25 @@ const eventArray = [];
 
 wss.on("connection", (event) => {
   eventArray.push(event);
-  event.on("message", (message) => {
-    eventArray.forEach((eventA) => {
-      eventA.send(message.toString("utf-8"));
-    });
-    // event.send(message.toString("utf-8"));
-  });
+  eventArray["nickname"] = "Anon";
   console.log("Connected to Browser ✓");
   event.on("close", () => {
     console.log("Disconnected from the Browser 𐄂");
+  });
+  event.on("message", (message) => {
+    const parsed = JSON.parse(message.toString("utf-8"));
+    switch (parsed.type) {
+      case "newMessage":
+        eventArray.forEach((eventA) => {
+          eventA.send(
+            `${eventArray["nickname"]}: ${parsed.payload.toString("utf-8")}`
+          );
+        });
+        break;
+      case "nickname":
+        eventArray["nickname"] = parsed.payload.toString("utf-8");
+        break;
+    }
   });
 });
 

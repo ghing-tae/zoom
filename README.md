@@ -7,4 +7,5 @@
 - [x] WebSocket Messages
 - [x] Chat Completed
 - [x] Nicknames part one: string > object & object > string
-- [ ] Nicknames part two
+- [x] Nicknames part two
+- [ ] Conclusions
