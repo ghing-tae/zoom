@@ -12,4 +12,5 @@
 - [x] SocketIO
 - [x] SocketIO Frontend Backend connected fuciton
 - [x] Rooms
-- [ ] Room Messages
+- [x] Room Messages
+- [ ] Room Notifications

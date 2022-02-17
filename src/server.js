@@ -20,34 +20,9 @@ wsServer.on("connection", (socket) => {
   socket.on("enterRoom", (roomName, done) => {
     socket.join(roomName);
     done();
+    socket.to(roomName).emit("welcome");
   });
 });
-
-// const wss = new WebSocket.Server({ server });
-// const eventArray = [];
-// wss.on("connection", (event) => {
-//   eventArray.push(event);
-//   eventArray["nickname"] = "Anon";
-//   console.log("Connected to Browser ✓");
-//   event.on("close", () => {
-//     console.log("Disconnected from the Browser 𐄂");
-//   });
-//   event.on("message", (message) => {
-//     const parsed = JSON.parse(message.toString("utf-8"));
-//     switch (parsed.type) {
-//       case "newMessage":
-//         eventArray.forEach((eventA) => {
-//           eventA.send(
-//             `${eventArray["nickname"]}: ${parsed.payload.toString("utf-8")}`
-//           );
-//         });
-//         break;
-//       case "nickname":
-//         eventArray["nickname"] = parsed.payload.toString("utf-8");
-//         break;
-//     }
-//   });
-// });
 
 const handleListen = () => console.log(`Listening on http://localhost:3000`);
 httpServer.listen(3000, handleListen);
