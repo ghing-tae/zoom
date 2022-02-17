@@ -8,4 +8,6 @@
 - [x] Chat Completed
 - [x] Nicknames part one: string > object & object > string
 - [x] Nicknames part two
-- [ ] Conclusions
+
+- [x] SocketIO
+- [ ] Rooms
