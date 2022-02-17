@@ -13,4 +13,5 @@
 - [x] SocketIO Frontend Backend connected fuciton
 - [x] Rooms
 - [x] Room Messages
-- [ ] Room Notifications
+- [x] Room Notifications
+- [ ] Nicknames
