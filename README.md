@@ -10,4 +10,5 @@
 - [x] Nicknames part two
 
 - [x] SocketIO
+- [x] SocketIO Frontend Backend connected fuciton
 - [ ] Rooms
