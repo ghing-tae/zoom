@@ -14,4 +14,4 @@
 - [x] Rooms
 - [x] Room Messages
 - [x] Room Notifications
-- [ ] Nicknames
+- [x] Nicknames
